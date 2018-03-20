@@ -1,0 +1,25 @@
+{% load bootstrap3 %}
+
+{% bootstrap_css %}
+<script src="//code.jquery.com/jquery.min.js"></script>
+{% bootstrap_javascript %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Post Form</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-primary"  />
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+var dom = document.getElementById('id_user_agent');
+dom.value = navigator.userAgent;
+</script>
