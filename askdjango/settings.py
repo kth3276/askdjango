@@ -156,8 +156,16 @@ NAVER_CLIENT_ID = 'fl7NbfSWFs6cyJkFYKcx'
 
 import raven
 
-GIT_ROOT = os.path.join(BASE_DIR, '..')  # FIXME: 현 프로젝트 ROOT 지정
+GIT_ROOT = BASE_DIR  # FIXME: 현 프로젝트 ROOT 지정
 if os.path.exists(os.path.join(GIT_ROOT, '.git')):
     release = raven.fetch_git_sha(GIT_ROOT) # 현재 최근 커밋해시 획득
 else:
     release = 'dev'
+
+
+RAVEN_CONFIG = {
+    'dsn': 'https://efb1dcb638bc45248da6e9bcdf8235bb:0c35bace5be74dd8889b5cab99314771@sentry.io/306985',
+    # If you are using git, you can also automatically configure the
+    # release based on the git info.
+    'release': release,
+}
