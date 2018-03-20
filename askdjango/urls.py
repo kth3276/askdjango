@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^$', lambda r: redirect('blog:post_list'), name='root'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^accounts/', include('allauth.urls')),
     url(r'^shop/', include('shop.urls', namespace='shop')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^dojo/', include('dojo.urls', namespace='dojo')),
